@@ -1,0 +1,286 @@
+@charset "utf-8";
+
+main {
+  width: 100%;
+  height: 100%;
+  margin-top: 60px;
+  /* position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto; */
+}
+
+/* ピラミッド */
+.pyramid_1,
+.pyramid_2,
+.pyramid_3 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* 入力項目 */
+textarea {
+  width: 261px;
+  height: 145px;
+  font-size: 14px;
+  /* font-weight: bold; */
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック体", "Yu Gothic", sans-serif;
+  margin-top: 40px;
+  padding: 10px;
+  /* border-radius: 5%; */
+  box-sizing: border-box;
+  resize: none;
+}
+
+textarea:hover {
+  resize: auto;
+}
+
+/* 矢印 */
+.arrow {
+  margin: 50px 0 0;
+  display: flex;
+  justify-content: center;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック体", "Yu Gothic", sans-serif;
+  user-select: none;
+}
+
+.arrow div {
+  font-size: 30px;
+}
+
+/* ボタン */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  position: fixed;
+  left: 11%;
+  top: 11%;
+}
+
+.button_save,
+.button_henkei,
+.button_clear,
+.button_rule {
+  /* display: block; */
+  width: 68.4px;
+  height: 38px;
+  font-size: 17px;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック体", "Yu Gothic", sans-serif;
+  /* font-weight: bold; */
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0px;
+  border-width: 1px;
+  border-radius: 7%;
+  background-color: #fff;
+  box-shadow: 0 0 2px rgb(118, 118, 118);
+  cursor: pointer;
+  user-select: none;
+}
+
+#modal_1 > span:hover,
+#modal_2 > span:hover,
+.button_save:hover,
+.button_henkei:hover,
+.button_clear:hover,
+.button_rule:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+/* ボタン クリック時 動き */
+.button_save:active,
+.button_henkei:active,
+.button_clear:active,
+.button_rule:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 0px;
+}
+
+/* モーダルウィンドウ ミニチャートの使い方 */
+#modal_1 {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック体", "Yu Gothic", sans-serif;
+  width: 504px;
+  height: 280px;
+  border: 1px solid #000;
+  border-radius: 5%;
+  padding: 30px;
+  background: #faf9f9;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  /* transition: opacity 2s; */
+  z-index: 2;
+  text-align: center;
+}
+#modal_1 > div {
+  font-size: 1.2rem;
+  text-align: justify;
+
+  /* font-family: "游ゴシック体",YuGothic,"游ゴシック Medium","Yu Gothic Medium","游ゴシック体","Yu Gothic",sans-serif; */
+}
+
+#modal_1 > span {
+  font-size: 1.5rem;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック体", "Yu Gothic", sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  background: rgb(240, 240, 240);
+  border: 1px solid;
+  border-radius: 7%;
+  margin-top: 40px;
+  padding: 5px;
+}
+
+/* モーダルウィンドウ 削除の確認*/
+#modal_2 {
+  font-size: 1.5rem;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック体", "Yu Gothic", sans-serif;
+  background: #faf9f9;
+  width: 252px;
+  height: 140px;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 7%;
+  padding: 40px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  /* transition: opacity 2s; */
+  z-index: 2;
+}
+
+#modal_2 > span {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック体", "Yu Gothic", sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  background: rgb(240, 240, 240);
+  border: 1px solid;
+  border-radius: 5%;
+  margin-top: 60px;
+  padding: 5px;
+}
+
+/* モーダルウィンドウ 周りの背景 */
+#mask {
+  background: rgba(0, 0, 0, 0.39);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* モーダルウィンドウ 非表示 */
+.hidden_modal {
+  display: none;
+}
+
+/* メッセージ 非表示*/
+.hidden_message_1 {
+  opacity: 0;
+  display: none;
+}
+
+.hidden_message_2 {
+  opacity: 0;
+  display: none;
+}
+
+/* 保存後のアニメーション */
+.appear_1 {
+  border: 1px solid;
+  border-radius: 5%;
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  opacity: 1;
+  font-size: 2rem;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック体", "Yu Gothic", sans-serif;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/* 削除後のアニメーション */
+.appear_2 {
+  border: 1px solid #000;
+  border-radius: 5%;
+  background: red;
+  color: #faf9f9;
+  padding: 20px;
+  opacity: 1;
+  font-size: 2rem;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック体", "Yu Gothic", sans-serif;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+
+  transform: translateX(-50%) translateY(-50%);
+  transition: opacity 2s;
+}
+
+/* 変形させる */
+.main-trans {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  transition-property: display;
+  transition-duration: 3s;
+}
+
+.pyramid_2-trans {
+  flex-direction: column-reverse;
+}
+
+.text_2-trans,
+.text_3-trans {
+  margin-left: 70px;
+}
+
+.pyramid_3-trans {
+  flex-direction: column-reverse;
+}
+
+.text_4-trans,
+.text_5-trans,
+.text_6-trans,
+.text_7-trans {
+  margin-left: 70px;
+}
+
+.buttons-trans {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  gap: 20px;
+  position: fixed;
+  left: 11%;
+  top: 11%;
+}
+
+.arrow-trans {
+  transform: rotate(-90deg);
+  margin-left: 40px;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ミニチャート(変形機能付き)</title>
+    <style></style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="main" class="main">
+      <!-- ピラミッドの1段目 -->
+      <div class="pyramid_1">
+        <div>
+          <textarea id="text_1" placeholder=""> </textarea>
+          <!-- <select name="" id="">
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+          </select> -->
+        </div>
+      </div>
+
+      <!-- 矢印1 -->
+      <div id="arrow_1" class="arrow">
+        <div>↓</div>
+      </div>
+
+      <!-- ピラミッドの2段目 -->
+      <div id="pyramid_2" class="pyramid_2">
+        <div>
+          <textarea id="text_2" placeholder=""></textarea>
+        </div>
+
+        <div>
+          <textarea id="text_3" placeholder=""></textarea>
+        </div>
+      </div>
+
+      <!-- 矢印2 -->
+      <div id="arrow_2" class="arrow">
+        <div>↓</div>
+      </div>
+
+      <!-- ピラミッドの3段目 -->
+      <div id="pyramid_3" class="pyramid_3">
+        <div>
+          <textarea id="text_4" placeholder=""></textarea>
+        </div>
+
+        <div>
+          <textarea id="text_5" placeholder=""></textarea>
+        </div>
+
+        <div>
+          <textarea id="text_6" placeholder=""></textarea>
+        </div>
+
+        <div>
+          <textarea id="text_7" placeholder=""></textarea>
+        </div>
+      </div>
+
+      <!-- ボタン -->
+      <div id="buttons" class="buttons">
+        <button id="button_save" class="button_save">全保存</button>
+        <button id="button_clear" class="button_clear">全削除</button>
+        <button id="button_henkei" class="button_henkei">変形</button>
+        <button id="button_rule" class="button_rule">使い方</button>
+      </div>
+
+      <!-- 保存/削除後のメッセージ -->
+      <span id="hidden_message_1" class="hidden_message_1">
+        全て保存しました｡
+      </span>
+      <span id="hidden_message_2" class="hidden_message_2">
+        全て削除しました｡
+      </span>
+
+      <!-- モーダルウィンドウ ミニチャートの使い方 -->
+      <div id="modal_1" class="hidden_modal">
+        <div>
+          ･全保存ボタンでテキストエリアに入力した内容が保持されるよ
+          <br /><br />
+          ･誤って全削除ボタンを押しても､確認のウインドウが表示されるよ
+          <br /><br />
+          ･変形ボタンでチャートの配置が縦方向↔横方向に切り替わります
+          <br /><br />
+          ･テキストエリア右下をドラッグするとサイズを変えられるよ｡元に戻したいときはページを更新してね
+        </div>
+        <span id="modal_1_close">閉じる</span>
+      </div>
+
+      <!-- モーダルウィンドウ 削除の確認-->
+      <div id="modal_2" class="hidden_modal">
+        <div>全て削除しますか?</div>
+        <span id="modal_2_yes">はい</span>
+        <span id="modal_2_no">いいえ</span>
+      </div>
+
+      <div id="mask" class="hidden_modal"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
